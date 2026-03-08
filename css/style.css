@@ -116,6 +116,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	transition: opacity 0.3s, visibility 0.3s;
+	display: none;
 }
 @media (min-width: 840px) {
 	.controls {
@@ -364,24 +365,27 @@ body {
 
 .bottom-text {
   position: absolute;
-  bottom: 40px; /* 距离底部的距离，可调 */
+  bottom: 8vh; /* 使用视口高度，避免被手机底栏遮挡 */
   width: 100%;
   text-align: center;
   z-index: 9999;
-  pointer-events: none; /* 不影响点击烟花 */
+  pointer-events: none;
+  padding: 0 12px;
 }
 
 .bottom-line {
   color: white;
-  font-size: 24px;
+  font-size: clamp(14px, 4vw, 22px); /* 自动适配手机和电脑 */
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   opacity: 0;
   transition: opacity 1.5s ease;
-  padding: 0 20px;
   line-height: 1.6;
   text-shadow: 0 0 8px rgba(0,0,0,0.6);
+  word-break: break-word;
 }
+
+
 
 
 
